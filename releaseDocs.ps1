@@ -4,6 +4,7 @@ param(
 )
 
 write-host  "Build the documentation site" 
+write-host  "`ACTOR is $ACTOR" 
 
 $SOURCE_DIR=$psscriptroot
 $TEMP_REPO_DIR=[System.IO.Path]::GetFullPath("$psscriptroot/../docs-gh-pages")
