@@ -44,7 +44,6 @@ jobs:
       #  run: bash releaseDocs.sh $GITHUB_ACTOR ${{ secrets.GITHUB_TOKEN }}
       - shell: pwsh
         run: |
-        .\releaseDocs.ps1 "$GITHUB_ACTOR" "${{ secrets.GITHUB_TOKEN }}"
+          .\releaseDocs.ps1 "$GITHUB_ACTOR" "${{ secrets.GITHUB_TOKEN }}"
 
 
-        
