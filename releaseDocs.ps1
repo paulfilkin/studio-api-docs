@@ -6,12 +6,12 @@ param(
 write-host  "Build the documentation site" 
 
 $SOURCE_DIR=$psscriptroot
-$TEMP_REPO_DIR="$psscriptroot/../docs-gh-pages"
+$TEMP_REPO_DIR=[System.IO.Path]::GetFullPath("$psscriptroot/../docs-gh-pages")
 
 $remote_repo="https://${ACTOR}:${TOKEN}@github.com/sdl/studio-api-docs.git"
 
 write-host "Removing temporary doc directory $TEMP_REPO_DIR"
-Remove-Item $TEMP_REPO_DIR -Force -recurse
+Remove-Item $TEMP_REPO_DIR -Force -Recurse -ErrorAction Ignore
 mkdir $TEMP_REPO_DIR
 
 write-host "Cloning the repo ${remote_repo} with the gh-pages branch"
