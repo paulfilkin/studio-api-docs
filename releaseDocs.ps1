@@ -23,7 +23,7 @@ Set-Location $TEMP_REPO_DIR
 git rm -r *
 
 write-host "Copy documentation into the repo"
-Copy-Item "$SOURCE_DIR\_site\*.*" . -Recurse
+Copy-Item "$SOURCE_DIR\_site\*" . -Recurse -force
 
 write-host "Push the new docs to the remote branch"
 git config --local user.email "github-actions[bot]@users.noreply.sdl.com"
